@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Arunava Kar - Computational Linguist & AI Engineer</title>
+    <meta name="description" content="Explore articles and insights by Arunava Kar on AI, computational linguistics, NLP, and more.">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Arunava Kar</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <div class="blog-header-content" data-aos="fade-up">
+                <h1>My Blog</h1>
+                <div class="separator"></div>
+                <p class="lead">Thoughts, insights, and explorations in AI, computational linguistics, and natural language processing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-layout">
+                <!-- Main Blog Articles -->
+                <div class="blog-main">
+                    <!-- Blog posts will be dynamically loaded here -->
+                    <div class="blog-posts-container">
+                        <div class="loading">Loading blog posts...</div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="blog-pagination" data-aos="fade-up"></div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="blog-sidebar">
+                    <!-- About Author -->
+                    <div class="sidebar-widget about-author" data-aos="fade-left">
+                        <h3>About the Author</h3>
+                        <div class="author-profile">
+                            <div class="author-image">
+                                <div class="profile-placeholder small"></div>
+                            </div>
+                            <div class="author-bio">
+                                <h4>Arunava Kar</h4>
+                                <p>Computational Linguist & AI Engineer with a Ph.D. in Computational Linguistics from the University of Hyderabad.</p>
+                                <div class="author-social">
+                                    <a href="https://www.linkedin.com/in/arunava-kar-877418119" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://github.com/Arunavaonly/" target="_blank"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories -->
+                    <div class="sidebar-widget categories" data-aos="fade-left">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#">NLP <span>(8)</span></a></li>
+                            <li><a href="#">Sentiment Analysis <span>(5)</span></a></li>
+                            <li><a href="#">LLMs <span>(7)</span></a></li>
+                            <li><a href="#">Gen AI <span>(6)</span></a></li>
+                            <li><a href="#">Projects <span>(4)</span></a></li>
+                            <li><a href="#">Case Studies <span>(3)</span></a></li>
+                            <li><a href="#">Languages <span>(5)</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Popular Posts -->
+                    <div class="sidebar-widget popular-posts" data-aos="fade-left">
+                        <h3>Popular Posts</h3>
+                        <div class="popular-post">
+                            <div class="post-image">
+                                <div class="blog-placeholder-small llm"></div>
+                            </div>
+                            <div class="post-content">
+                                <h5><a href="blog-post.html?slug=llms-for-scientific-literature-review">Evaluating LLMs for Scientific Literature Review</a></h5>
+                                <div class="post-date">September 22, 2023</div>
+                            </div>
+                        </div>
+                        <div class="popular-post">
+                            <div class="post-image">
+                                <div class="blog-placeholder-small rag"></div>
+                            </div>
+                            <div class="post-content">
+                                <h5><a href="blog-post.html?slug=building-rag-custom-knowledge-base">Building a RAG System with Custom Knowledge Base</a></h5>
+                                <div class="post-date">March 18, 2023</div>
+                            </div>
+                        </div>
+                        <div class="popular-post">
+                            <div class="post-image">
+                                <div class="blog-placeholder-small youtube"></div>
+                            </div>
+                            <div class="post-content">
+                                <h5><a href="blog-post.html?slug=youtube-comments-nlp-analysis">Analyzing YouTube Comments with NLP and ML</a></h5>
+                                <div class="post-date">May 5, 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="sidebar-widget tags" data-aos="fade-left">
+                        <h3>Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#">NLP</a>
+                            <a href="#">Machine Learning</a>
+                            <a href="#">AI</a>
+                            <a href="#">Deep Learning</a>
+                            <a href="#">BERT</a>
+                            <a href="#">GPT</a>
+                            <a href="#">LLMs</a>
+                            <a href="#">Bengali</a>
+                            <a href="#">Sentiment Analysis</a>
+                            <a href="#">Python</a>
+                            <a href="#">RAG</a>
+                            <a href="#">Transformer</a>
+                            <a href="#">PDF</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div class="sidebar-widget newsletter" data-aos="fade-left">
+                        <h3>Subscribe to Newsletter</h3>
+                        <p>Stay updated with my latest articles and insights</p>
+                        <form id="newsletterForm">
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <button type="submit" class="btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Arunava Kar</h3>
+                    <p>Computational Linguist & AI Engineer</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arunava-kar-877418119" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Arunavaonly/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:arunavakaronly@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Arunava Kar. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Mock data for local development -->
+    <script src="js/mock-data.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

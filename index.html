@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arunava Kar | Computational Linguist & AI Engineer</title>
+    <meta name="description" content="Portfolio of Arunava Kar, Computational Linguist and AI Engineer with expertise in NLP, transformer architectures, and Gen AI.">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=VT323&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Retro Terminal Animation Overlay -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <div class="terminal-screen">
+            <div class="terminal-header">
+                <div class="terminal-title"> Portfolio: Arunava</div>
+                <div class="terminal-buttons">
+                    <div class="terminal-button minimize"></div>
+                    <div class="terminal-button maximize"></div>
+                    <div class="terminal-button close"></div>
+                </div>
+            </div>
+            <div class="scan-line"></div>
+            <div class="terminal-content">
+                <div class="terminal-text" id="terminal-text"></div>
+                <span class="terminal-cursor"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content - initially hidden -->
+    <div id="main-content" class="content-hidden">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">Arunava Kar</a>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#contact" class="btn-primary">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1>Hi, I'm <span class="highlight">Arunava Kar</span></h1>
+                    <h2>Ph.D. in Computational Linguistics</h2>
+                    <h2>AI Engineer and Deep Learning Researcher</h2>
+                    <p>Expertise in developing scalable AI applications, NLP, transformer architectures, and GenAI.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn-primary">View My Work</a>
+                        <a href="#contact" class="btn-secondary">Get In Touch</a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arunava-kar-877418119" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Arunavaonly/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:arunavakaronly@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+                    <div class="image-container">
+                        <!-- EnigmaPDF promo card -->
+                        <div class="enigma-promo-card">
+                            <div class="enigma-icon">
+                                <img src="images/logo.jpg" alt="EnigmaPDF Icon" class="enigma-logo">
+                            </div>
+                            <h3>EnigmaPDF</h3>
+                            <p>Free PDF management tool for all your document needs</p>
+                            <ul class="enigma-features">
+                                <li><i class="fas fa-check"></i> Merge & Split PDFs</li>
+                                <li><i class="fas fa-check"></i> Convert Documents</li>
+                                <li><i class="fas fa-check"></i> Extract & Watermark</li>
+                            </ul>
+                            <a href="https://enigmapdf.in/" target="_blank" class="btn-primary">Use our PDF management Tool</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (Brief) -->
+        <section id="about-brief" class="about-brief">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>About Me</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="about-brief-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <p>Computational Linguist and AI Engineer with a Ph.D. in Computational Linguistics and extensive experience in developing scalable AI applications. Skilled in Python, Flask, and cloud deployments, with hands-on work in NLP, transformer architectures, and Gen AI.</p>
+                        <p>Passionate about integrating cutting-edge LLMs (such as GPT, Llama) and data pipelines to revolutionize recruitment and data extraction.</p>
+                        <a href="about.html" class="btn-secondary">Learn More About Me</a>
+                    </div>
+                    <div class="timeline" data-aos="fade-left">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Tech Mahindra</h3>
+                                <p class="timeline-date">Dec 2023 - Jan 2025</p>
+                                <p>Computational Linguist</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>IIT Guwahati</h3>
+                                <p class="timeline-date">Jul 2023 - Sep 2023</p>
+                                <p>Intern</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>University of Hyderabad</h3>
+                                <p class="timeline-date">Aug 2017 - Jun 2023</p>
+                                <p>Ph.D. in Computational Linguistics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Featured Projects</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-image">
+                            <img src="images/sentiment_analysis.png" alt="YouTube Video Evaluator Icon" class="project-image">
+                            <div class="project-placeholder youtube-analyzer"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>YouTube Video Evaluator Using Sentiment Analysis</h3>
+                            <p>An application that analyzes sentiment in Bangla YouTube video comments, providing opinion scores and viewer polarity. Built with fine-tuned roBERTa architecture achieving 93% f1 score.</p>
+                            <div class="project-tech">
+                                <span>Sentiment Analysis</span>
+                                <span>roBERTa</span>
+                                <span>Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Arunavaonly/Bangla-YouTube-Sentiment-Analysis-App" target="_blank" class="btn-small">View Code <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="images/enigma.png" alt="EnigmaPDF Icon" class="project-image">
+                            <div class="project-placeholder enigma-pdf"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>EnigmaPDF (PC and Web)</h3>
+                            <p>A free PDF tool for Windows, Linux, and macOS with a web version. Offers PDF merging, splitting, insertion, conversion, extraction, watermarking, and page removal. PC version built with Python and QT, web version with Flask and React.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Flask</span>
+                                <span>React</span>
+                                <span>QT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Arunavaonly/PDF-Application-for-PC" target="_blank" class="btn-small">PC Version <i class="fab fa-github"></i></a>
+                                <a href="https://enigmapdf.in/" target="_blank" class="btn-small">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="images/recommender_system.png" alt="YouTube Video Evaluator Icon" class="project-image">
+                            <div class="project-placeholder youtube-recommender"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Query-Based YouTube Recommender System</h3>
+                            <p>A recommender system using a novel ranking algorithm and multimodal click-bait video detection models. Implements transformer and ResNet-50 architecture to analyze video titles and thumbnails.</p>
+                            <div class="project-tech">
+                                <span>Transformer</span>
+                                <span>ResNet-50</span>
+                                <span>Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Arunavaonly/Query-Based-Recommender-system-for-YouTube" target="_blank" class="btn-small">View Code <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Blog Posts Section -->
+        <section id="blog-preview" class="blog-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Latest Articles</h2>
+                    <div class="separator"></div>
+                    <p>Thoughts and insights on AI, computational linguistics, and NLP</p>
+                </div>
+                <div class="featured-posts">
+                    <!-- Blog posts will be loaded dynamically via JavaScript -->
+                </div>
+                <div class="blog-cta" data-aos="fade-up">
+                    <a href="blog.html" class="btn-primary">View All Articles</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Skills & Expertise</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="skills-wrapper">
+                    <!-- Skill Category 1 -->
+                    <div class="skill-category" data-aos="fade-up">
+                        <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                        <div class="skills-list">
+                            <span>Sklearn</span>
+                            <span>Pandas</span>
+                            <span>Jax</span>
+                            <span>TensorFlow</span>
+                            <span>Keras</span>
+                            <span>Model Optimization</span>
+                            <span>Deep Learning</span>
+                            <span>CNN</span>
+                            <span>Transformer</span>
+                            <span>BERT</span>
+                            <span>GPT</span>
+                            <span>Model Fine-tuning</span>
+                            <span>Reinforcement Learning</span>
+                            <span>Unsupervised Learning</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill Category 2 -->
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                        <h3><i class="fas fa-robot"></i> GEN AI</h3>
+                        <div class="skills-list">
+                            <span>LLM Integration</span>
+                            <span>Prompt Engineering</span>
+                            <span>LangChain</span>
+                            <span>RAG</span>
+                            <span>Chatbot Development</span>
+                            <span>Google DialogFlow</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill Category 3 -->
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                        <h3><i class="fas fa-database"></i> Data Engineering</h3>
+                        <div class="skills-list">
+                            <span>NumPy</span>
+                            <span>Pandas</span>
+                            <span>Matplotlib</span>
+                            <span>Data Visualization</span>
+                            <span>Data Filtering</span>
+                            <span>Data Mining</span>
+                            <span>Web Crawling</span>
+                            <span>Data Labelling</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill Category 4 -->
+                    <div class="skill-category" data-aos="fade-up">
+                        <h3><i class="fas fa-language"></i> Computational Linguistics</h3>
+                        <div class="skills-list">
+                            <span>Semantics</span>
+                            <span>Verb Semantics</span>
+                            <span>Dependency Structure</span>
+                            <span>NLP</span>
+                            <span>WordNet</span>
+                            <span>Ontology</span>
+                            <span>Transformer Architecture</span>
+                            <span>Attention Mechanism</span>
+                            <span>Encoder-Decoder Architecture</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill Category 5 -->
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                        <h3><i class="fas fa-code"></i> Web Development & DevOps</h3>
+                        <div class="skills-list">
+                            <span>React</span>
+                            <span>SQL</span>
+                            <span>Flask</span>
+                            <span>Django</span>
+                            <span>Node.js</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill Category 6 -->
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                        <h3><i class="fas fa-cloud"></i> Cloud & Other</h3>
+                        <div class="skills-list">
+                            <span>GCP</span>
+                            <span>Microsoft Azure</span>
+                            <span>Vector Databases</span>
+                            <span>API Development</span>
+                            <span>Scalable Architectures</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="publications">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Publications</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="publications-list">
+                    <div class="publication" data-aos="fade-up">
+                        <div class="publication-year">2023</div>
+                        <div class="publication-content">
+                            <h3>Evaluating YouTube Videos via Sentiment Analysis: A Case Study in Bangla-English Code-mixed Content</h3>
+                            <p>Kar, A and Jana, A. (2023). Lecture Notes in Networks and Systems. Springer</p>
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-64650-8_43" target="_blank" class="publication-link">View Publication <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="publication" data-aos="fade-up" data-aos-delay="100">
+                        <div class="publication-year">2021</div>
+                        <div class="publication-content">
+                            <h3>Use of Ontology in Bengali Verb Frame and Its Importance in Verb Sense Disambiguation</h3>
+                            <p>Kar, A. (2021). Jadavpur Journal of Language and Linguistics, Vol 4, Pages 161-172.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Get In Touch</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p><a href="mailto:arunavakaronly@gmail.com">arunavakaronly@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+91-8902434482</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h3>LinkedIn</h3>
+                                <p><a href="https://www.linkedin.com/in/arunava-kar-877418119" target="_blank">Arunava Kar</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <h3>GitHub</h3>
+                                <p><a href="https://github.com/Arunavaonly/" target="_blank">Arunavaonly</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form" data-aos="fade-left">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="error-message" id="name-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                                <div class="error-message" id="subject-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <div class="error-message" id="message-error"></div>
+                            </div>
+                            <div class="form-status" id="form-status"></div>
+                            <button type="submit" class="btn-primary" id="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>Arunava Kar</h3>
+                        <p>Computational Linguist & AI Engineer</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <h4>Connect</h4>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/arunava-kar-877418119" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/Arunavaonly/" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="mailto:arunavakaronly@gmail.com"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Arunava Kar. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Mock data for local development -->
+    <script src="js/mock-data.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

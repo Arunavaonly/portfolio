@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "A modern portfolio website showcasing skills, projects, and blog content for Arunava Kar, a Computational Linguist and AI Engineer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sanity/client": "^6.28.4",
+    "@sendgrid/mail": "^8.1.4",
+    "mongodb": "^6.15.0"
+  }
+}

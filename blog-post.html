@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | Arunava Kar</title>
+    <meta name="description" content="Read the latest articles by Arunava Kar on AI, computational linguistics, NLP, and more.">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Markdown CSS for rendering blog content -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Blog Post Specific Styles */
+        .blog-post-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .blog-post-header {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .blog-post-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .blog-post-category {
+            padding: 4px 10px;
+            background-color: var(--primary-light);
+            color: white;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem;
+        }
+        
+        .blog-post-date {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+        
+        .blog-post-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .blog-post-content {
+            line-height: 1.8;
+        }
+        
+        .blog-post-content img {
+            max-width: 100%;
+            border-radius: var(--border-radius-md);
+            margin: var(--spacing-md) 0;
+        }
+        
+        .blog-post-content h1, 
+        .blog-post-content h2, 
+        .blog-post-content h3, 
+        .blog-post-content h4, 
+        .blog-post-content h5, 
+        .blog-post-content h6 {
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .blog-post-content p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .blog-post-content ul, 
+        .blog-post-content ol {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+        
+        .blog-post-content li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .blog-post-content blockquote {
+            border-left: 4px solid var(--primary-light);
+            padding-left: var(--spacing-md);
+            margin-left: 0;
+            margin-bottom: var(--spacing-md);
+            font-style: italic;
+            color: var(--gray-dark);
+        }
+        
+        .blog-post-content pre {
+            background-color: #f1f1f1;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            overflow-x: auto;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .blog-post-content code {
+            font-family: monospace;
+            background-color: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .blog-post-content a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .blog-post-content a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .blog-post-image {
+            width: 100%;
+            height: 400px;
+            margin-bottom: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+        }
+        
+        .blog-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .blog-post-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--gray-light);
+        }
+        
+        .blog-post-author-image {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--border-radius-circle);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .blog-post-author-bio h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .blog-post-author-bio p {
+            font-size: 0.95rem;
+            color: var(--gray-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .loading, .error {
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .loading {
+            color: var(--gray-color);
+        }
+        
+        .error {
+            color: var(--danger-color);
+        }
+        
+        .blog-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: var(--spacing-xl);
+        }
+        
+        @media (max-width: 768px) {
+            .blog-post-title {
+                font-size: 2rem;
+            }
+            
+            .blog-post-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Arunava Kar</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post-page">
+        <div class="container" style="padding-top: 120px; padding-bottom: var(--spacing-xxl);">
+            <div id="blog-post-container">
+                <div class="loading">Loading blog post...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Arunava Kar</h3>
+                    <p>Computational Linguist & AI Engineer</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arunava-kar-877418119" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Arunavaonly/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:arunavakaronly@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Arunava Kar. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Markdown JS library -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Mock data for local development -->
+    <script src="js/mock-data.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
