@@ -439,9 +439,9 @@ p {
     h3 {
         font-size: 1.5rem;
     }
-
     .hero .container {
         flex-direction: column;
+        margin: 0 auto;
     }
     
     .hero-content {
@@ -2121,14 +2121,22 @@ p {
 }
 
 /* For mobile screens */
+
+
 @media (max-width: 768px) {
+    .terminal-overlay{
+        position: relative;
+    }
     .terminal-screen {
-        width: 95%;
-        height: 80vh;
+        position: absolute;
+        left:5%;
+        width: 90%;
+        height: 60vh;
+        padding: var(--spacing-sm);
     }
     
     .terminal-content {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
 }
 
