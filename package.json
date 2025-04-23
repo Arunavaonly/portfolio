@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sanity/client": "^6.28.4",
+    "@sanity/client": "^6.29.0",
     "@sendgrid/mail": "^8.1.4",
     "mongodb": "^6.15.0"
   }
