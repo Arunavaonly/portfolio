@@ -3,22 +3,51 @@ document.addEventListener('DOMContentLoaded', function() {
     const terminalOverlay = document.getElementById('terminal-overlay');
     const mainContent = document.getElementById('main-content');
 
-    // Check if this is first visit in current session
-    if (sessionStorage.getItem('hasVisited')) {
-        // If already visited, skip terminal animation
-        if (terminalOverlay) {
-            terminalOverlay.style.display = 'none';
-            terminalOverlay.remove(); // Completely remove from DOM
-        }
+     // Check if elements exist before proceeding
+     if (!terminalOverlay || !mainContent) {
+        console.error("Terminal overlay or main content element not found!");
+        // Ensure main content is visible if terminal setup fails
         if (mainContent) {
-            mainContent.classList.remove('content-hidden');
-            mainContent.classList.add('content-visible');
+             mainContent.classList.remove('content-hidden');
+             mainContent.classList.add('content-visible');
         }
-        return;
+        // If terminal exists but main content doesn't, something is wrong, maybe hide terminal?
+         if (terminalOverlay) {
+             terminalOverlay.style.display = 'none'; // Fallback hide
+             terminalOverlay.remove(); // Attempt to remove
+         }
+        return; // Exit if essential elements are missing
     }
 
-    // Mark that user has visited
-    sessionStorage.setItem('hasVisited', 'true');
+   // Check if this is first visit in current session
+   if (sessionStorage.getItem('hasVisited')) {
+       // If already visited, skip terminal animation entirely
+       // The 'terminal-hidden' class in CSS should hide it instantly.
+
+       // Ensure main content is visible immediately
+       mainContent.classList.remove('content-hidden');
+       mainContent.classList.add('content-visible');
+
+       // Force a brief reflow just in case
+       mainContent.offsetHeight; // Read a layout-dependent property
+
+       // Scroll to the top (optional but can help if content is initially below the fold)
+       window.scrollTo(0, 0); // Scroll instantly
+
+       // Completely remove terminal from DOM as it's not needed
+       terminalOverlay.remove();
+
+
+       return; // Stop JavaScript execution for the terminal animation part
+   }
+
+   // If this is the first visit:
+
+   // Mark that user has visited
+   sessionStorage.setItem('hasVisited', 'true');
+
+   // Remove the initial 'terminal-hidden' class to make it visible for animation
+   terminalOverlay.classList.remove('terminal-hidden');
 
     // Bio text to display in the terminal
     const bioText = [
@@ -42,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let lineIndex = 0;
     let charIndex = 0;
     let currentLine = '';
-    let isDeleting = false;
     let typingSpeed = 50; // Base typing speed in milliseconds
 
     // Random typing speed variation for realistic effect
@@ -63,27 +91,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Type next character
     function typeNextChar() {
-        if (lineIndex >= bioText.length) {
-            // All text typed, fade out terminal and show main content
-            setTimeout(() => {
-                if (terminalOverlay) {
-                    terminalOverlay.classList.add('fade-out');
-                }
-                if (mainContent) {
-                    mainContent.classList.remove('content-hidden');
-                    mainContent.classList.add('content-visible');
-                }
-
-
-                // Remove terminal from DOM after animation
-                setTimeout(() => {
-                    if (terminalOverlay) {
-                       terminalOverlay.remove();
-                    }
-                }, 300);
-            }, 700);
+        if (!terminal || !mainContent || !terminalOverlay) {
+            console.error("Essential elements missing during typing animation.");
+            // Attempt to show main content and clean up terminal if possible
+            if (mainContent) {
+                 mainContent.classList.remove('content-hidden');
+                 mainContent.classList.add('content-visible');
+            }
+             if (terminalOverlay) {
+                terminalOverlay.remove();
+             }
             return;
         }
+
+      if (lineIndex >= bioText.length) {
+          // All text typed, fade out terminal and show main content
+          setTimeout(() => {
+              terminalOverlay.classList.add('fade-out');
+
+              // --- Start: Modified part for showing main content ---
+              mainContent.classList.remove('content-hidden');
+              mainContent.classList.add('content-visible');
+
+              // Force a reflow/repaint - helps ensure content appears on some browsers
+              // Accessing offsetHeight forces the browser to calculate layout
+              mainContent.offsetHeight;
+
+              // --- End: Modified part ---
+
+              // Remove terminal from DOM after animation
+              // Adjust this timeout to match your CSS fade-out transition duration
+              setTimeout(() => {
+                  terminalOverlay.remove();
+
+                  // --- Start: Optional Scroll to Top after fade-out ---
+                  // Scroll to the top after the animation is completely finished
+                  // This ensures the user sees the beginning of the content.
+                  window.scrollTo({ top: 0, behavior: 'smooth' }); // Use smooth scroll
+                  // Or for instant scroll: window.scrollTo(0, 0);
+                  // --- End: Optional Scroll to Top ---
+
+              }, 300); // Time AFTER main content visibility changes and reflow is forced
+
+          }, 700); // Delay before starting fade-out animation
+          return;
+      }
 
         // Get current line
         const line = bioText[lineIndex];
