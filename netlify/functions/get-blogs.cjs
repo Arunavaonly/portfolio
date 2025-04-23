@@ -3,14 +3,11 @@ const {createClient} = require('@sanity/client');
 
 // Ensure these are set as environment variables in your Netlify site settings
 const {
-  SANITY_PROJECT_ID,
-  SANITY_DATASET,
-  SANITY_API_VERSION = '2023-08-01', // Use the date you initialized your Sanity project, or a recent one
-  SANITY_API_READ_TOKEN // Needed for fetching drafts/preview content
+  SANITY_PROJECT_ID
 } = process.env;
 
 const client = createClient({
-  projectId: "7ouj82af",
+  projectId: SANITY_PROJECT_ID,
   dataset: "production",
   apiVersion: "v2025-04-22",
   useCdn: true
