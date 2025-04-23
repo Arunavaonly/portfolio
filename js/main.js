@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchFeaturedBlogPosts();
 
     // If on the blog page, fetch all blog posts
-    if (window.location.pathname.includes('blog.html')) {
+    if (window.location.pathname.includes('blog')) {
         fetchAllBlogPosts();
     }
 
@@ -574,6 +574,7 @@ function fetchAllBlogPosts() {
 
     // Show loading state
     blogPostsContainer.innerHTML = '<div class="loading">Loading blog posts...</div>';
+    console.log("loading blogs")
 
     // Get URL parameters for pagination
     const urlParams = new URLSearchParams(window.location.search);
@@ -597,6 +598,7 @@ function fetchAllBlogPosts() {
             data.posts.forEach(post => {
                 const postElement = createBlogPostElement(post);
                 blogPostsContainer.appendChild(postElement);
+                console.log('blogs created')
             });
 
             // Update pagination if available
