@@ -1,9 +1,32 @@
-// Terminal typing animation - Keep this section as is, it seems unrelated to the blog fetching issue.
 document.addEventListener('DOMContentLoaded', function() {
     const terminalOverlay = document.getElementById('terminal-overlay');
     const mainContent = document.getElementById('main-content');
 
-     // Check if elements exist before proceeding
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const hasVisited = sessionStorage.getItem('hasVisited');
+
+    if (hasVisited || isMobile) {
+        // User has already visited or is on mobile, skip terminal animation
+ 
+        // Ensure main content is visible immediately
+        mainContent.classList.remove('content-hidden');
+        mainContent.classList.add('content-visible');
+ 
+        // Force a brief reflow just in case
+        mainContent.offsetHeight; // Read a layout-dependent property
+ 
+        // Scroll to the top (optional but can help if content is initially below the fold)
+        window.scrollTo(0, 0); // Scroll instantly
+ 
+        // Completely remove terminal from DOM as it's not needed
+        terminalOverlay.style.display = 'none'; // Ensure it's hidden just before removal
+        terminalOverlay.remove();
+ 
+ 
+        return; // Stop JavaScript execution for the terminal animation part
+    }
+  
+    // Check if elements exist before proceeding
      if (!terminalOverlay || !mainContent) {
         console.error("Terminal overlay or main content element not found!");
         // Ensure main content is visible if terminal setup fails
@@ -19,35 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return; // Exit if essential elements are missing
     }
 
-   // Check if this is first visit in current session
-   if (sessionStorage.getItem('hasVisited')) {
-       // If already visited, skip terminal animation entirely
-       // The 'terminal-hidden' class in CSS should hide it instantly.
 
-       // Ensure main content is visible immediately
-       mainContent.classList.remove('content-hidden');
-       mainContent.classList.add('content-visible');
-
-       // Force a brief reflow just in case
-       mainContent.offsetHeight; // Read a layout-dependent property
-
-       // Scroll to the top (optional but can help if content is initially below the fold)
-       window.scrollTo(0, 0); // Scroll instantly
-
-       // Completely remove terminal from DOM as it's not needed
-       terminalOverlay.remove();
-
-
-       return; // Stop JavaScript execution for the terminal animation part
-   }
-
-   // If this is the first visit:
 
    // Mark that user has visited
    sessionStorage.setItem('hasVisited', 'true');
 
-   // Remove the initial 'terminal-hidden' class to make it visible for animation
-   terminalOverlay.classList.remove('terminal-hidden');
+   terminalOverlay.style.display = 'flex'; // Show terminal overlay
+
 
     // Bio text to display in the terminal
     const bioText = [
