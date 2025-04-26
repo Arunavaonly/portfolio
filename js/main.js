@@ -57,11 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "",
         "$ cat bio.txt",
         "Computational Linguist & AI Engineer with expertise in:",
-        "- Natural Language Processing (NLP)",
-        "- Large Language Models (LLMs)",
-        "- Sentiment Analysis & Text Mining",
-        "- Recommender Systems",
-        "- Knowledge Graphs & Ontologies",
+        " Generative AI, NLP, and related technologies.",
         "",
         "$ ./load_portfolio.sh",
         "Loading portfolio... Please wait..."
