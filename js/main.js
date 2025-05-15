@@ -656,6 +656,32 @@ function fetchBlogPost(slug) {
             if (metaDescription && post.excerpt) {
                 metaDescription.setAttribute('content', post.excerpt);
             }
+            // Set favicon to blog image (or fallback)
+            let favicon = document.querySelector('link[rel="icon"]');
+            if (!favicon) {
+                favicon = document.createElement('link');
+                favicon.setAttribute('rel', 'icon');
+                document.head.appendChild(favicon);
+            }
+            favicon.setAttribute('type', 'image/png');
+            favicon.setAttribute('href', post.mainImageUrl || '/images/icon.png');
+
+            // Set Open Graph description to the except
+            let ogDescription = document.querySelector('meta[property="og:description"]');
+            if (!ogDescription) {
+                ogDescription = document.createElement('meta');
+                ogDescription.setAttribute('property', 'og:description');
+                document.head.appendChild(ogDescription);
+            }
+            ogDescription.setAttribute('content', post.excerpt || post.title);
+            // Set Open Graph image
+            let ogImage = document.querySelector('meta[property="og:image"]');
+            if (!ogImage) {
+                ogImage = document.createElement('meta');
+                ogImage.setAttribute('property', 'og:image');
+                document.head.appendChild(ogImage);
+            }
+            ogImage.setAttribute('content', post.mainImageUrl || '/images/default.png');
 
         } else {
             showError('Blog post not found. Please check the URL and try again.');
